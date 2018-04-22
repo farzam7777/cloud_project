@@ -1052,7 +1052,7 @@ z-index:100;cursor:pointer; position:relative;	background:url(../assets/small_le
 .tp-leftarrow.default {
 width:48px;
 height:48px;
-background:url(../assets/arrow_left3.html) no-repeat center center;
+background-image: url(<%= asset_path 'img/arrow_left2.png' %>) no-repeat center center;
 opacity:0.5;
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
@@ -1063,7 +1063,7 @@ opacity:0.5;
 .tp-rightarrow.default {
 width:48px;
 height:48px;
-background:url(../assets/arrow_right3.png) no-repeat center center;
+background-image: url(<%= asset_path 'img/arrow_right2.png' %>) no-repeat center center;
 opacity:0.5;
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
@@ -1073,7 +1073,7 @@ opacity:0.5;
 
 .tp-leftarrow.default:hover {
 opacity:1;
-background:url(../assets/arrow_left3_hr.png) no-repeat center center;
+background: url(<%= asset_path 'img/arrow_left3_hr.png' %>) no-repeat center center;
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-o-transition: all .3s ease-in-out;
