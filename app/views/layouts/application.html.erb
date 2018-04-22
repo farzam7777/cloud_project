@@ -5,10 +5,22 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="icon" href="img/favicon.ico" sizes="16x16">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="home_one">
+  	<!-- start preloader -->
+      <div id="loader-wrapper">
+        <div class="logo"><a href="#"><span>Hotel</span>-Booking</a></div>
+        <div id="loader">
+        </div>
+      </div>
+    <!-- end preloader -->
+
+    <%= render 'header' %>
+    <%= render "shared/flash_messages" %>
     <%= yield %>
+    <%= render 'footer' %>
   </body>
 </html>
