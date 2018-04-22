@@ -17,6 +17,7 @@ website:   	http://www.themepunch.com
 	-	CAPTIONS	-
 **************************/
 
+
 .tp-static-layers	{	position:absolute; z-index:505; top:0px;left:0px}
 
 .tp-hide-revslider,.tp-caption.tp-hidden-caption	{	visibility:hidden !important; display:none !important}
@@ -1493,7 +1494,7 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 .tp-leftarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/large_left.png) no-Repeat 0 0;	width:40px;	height:40px;
 
 														}
-.tp-rightarrow.default									{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/large_right.png) no-Repeat 0 0;	width:40px;	height:40px;
+.tp-rightarrow.default									{	z-index:100;cursor:pointer; position:relative; background-image: url(/assets/img/large_right-e043930c7420af53e0685050b8c1b149bb5b012b3449a02d69d1f399a4862834.png) no-Repeat 0 0;	width:40px;	height:40px;
 
 														}
 
