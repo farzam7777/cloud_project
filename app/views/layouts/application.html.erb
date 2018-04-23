@@ -4,7 +4,7 @@
     <title>CloudProject</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'js/jquery-1.11.0.min.js', 'js/bootstrap.min.js', 'js/bootstrap-hover-dropdown.min.js', 'js/owl.carousel.min.js', 'js/jquery.parallax-1.1.3.js', 'js/jquery.nicescroll.js', 'js/jquery.prettyPhoto.js', 'js/jquery-ui-1.10.4.custom.min.js', 'js/jquery.forms.js', 'js/jquery.sticky.js', 'js/waypoints.min.js', 'js/jquery.isotope.min.js', 'js/jquery.gmap.min.js', 'js/switch.js', 'js/custom.js', 'js/jquery.themepunch.tools.min.js', 'js/jquery.themepunch.revolution.min.js', 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -12,5 +12,23 @@
     <%= render "shared/flash_messages" %>
     <%= yield %>
     <%= render 'footer' %>
+
+  <%= javascript_include_tag 'js/jquery-1.11.0.min.js' %>
+  <%= javascript_include_tag 'js/bootstrap.min.js' %>
+  <%= javascript_include_tag 'js/bootstrap-hover-dropdown.min.js' %>
+  <%= javascript_include_tag 'js/owl.carousel.min.js' %>
+  <%= javascript_include_tag 'js/jquery.parallax-1.1.3.js' %>
+  <%= javascript_include_tag 'js/jquery.nicescroll.js' %>
+  <%= javascript_include_tag 'js/jquery.prettyPhoto.js' %>
+  <%= javascript_include_tag 'js/jquery-ui-1.10.4.custom.min.js' %>
+  <%= javascript_include_tag 'js/jquery.forms.js' %>
+  <%= javascript_include_tag 'js/jquery.sticky.js' %>
+  <%= javascript_include_tag 'js/waypoints.min.js' %>
+  <%= javascript_include_tag 'js/jquery.isotope.min.js' %>
+  <%= javascript_include_tag 'js/jquery.gmap.min.js' %>
+  <%= javascript_include_tag 'js/switch.js' %>
+  <%= javascript_include_tag 'js/custom.js' %>
+  <%= javascript_include_tag 'js/jquery.themepunch.tools.min.js' %>
+  <%= javascript_include_tag 'js/jquery.themepunch.revolution.min.js' %>
   </body>
 </html>

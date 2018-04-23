@@ -17,6 +17,7 @@ website:   	http://www.themepunch.com
 	-	CAPTIONS	-
 **************************/
 
+
 .tp-static-layers	{	position:absolute; z-index:505; top:0px;left:0px}
 
 .tp-hide-revslider,.tp-caption.tp-hidden-caption	{	visibility:hidden !important; display:none !important}
@@ -1490,10 +1491,10 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 .tp-rightarrow.square-old								{	z-index:100;cursor:pointer; position:relative;	background:url(../assets/arrow_right2.png) no-Repeat top left;	width:12px;	height:17px;   float:left;	margin-left:0px; margin-top:0px}
 
 
-.tp-leftarrow.default									{	z-index:100;cursor:pointer; position:relative;	background-image: url(<%= asset_path 'img/large_left.png' %>); no-Repeat 0 0; width:40px;	height:40px;
+.tp-leftarrow.default									{	z-index:100;cursor:pointer; position:relative;	background-image: url(/assets/img/large_left-1e93f3215066083474d73115bbef66b052e2add1e20a5670fbbe509e3679b27a.png); no-Repeat 0 0; width:40px;	height:40px;
 
 														}
-.tp-rightarrow.default									{	z-index:100;cursor:pointer; position:relative; background-image: url(<%= asset_path 'img/large_right.png' %>); no-Repeat 0 0; width:40px;	height:40px;
+.tp-rightarrow.default									{	z-index:100;cursor:pointer; position:relative; background-image: url(/assets/img/large_right-e043930c7420af53e0685050b8c1b149bb5b012b3449a02d69d1f399a4862834.png); no-Repeat 0 0; width:40px;	height:40px;
 
 														}
 
