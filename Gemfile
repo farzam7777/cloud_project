@@ -22,6 +22,7 @@ gem 'devise'
 gem 'devise-bootstrapped'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+gem 'thin'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
