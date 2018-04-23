@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
          :omniauth_providers => [:facebook, :google_oauth2]
 
-  has_many :user_provider, :dependent => :destroy
+  has_many :user_providers, :dependent => :destroy
 end
