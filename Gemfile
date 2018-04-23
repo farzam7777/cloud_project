@@ -24,6 +24,10 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'thin'
 
+gem 'rails_12factor', group: :production
+gem 'pg', '~> 0.21.0', group: :production
+gem 'heroku-deflater', group: :production
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
