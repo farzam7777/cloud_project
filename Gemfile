@@ -28,6 +28,8 @@ gem 'active_skin'
 gem 'active_admin_theme'
 gem 'activeadmin_addons'
 gem 'simple_form'
+gem "paperclip"
+gem 'aws-sdk', '~>2'
 
 gem 'rails_12factor', group: :production
 gem 'pg', '~> 0.21.0', group: :production

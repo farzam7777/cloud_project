@@ -1,0 +1,27 @@
+<!-- Room -->
+<div class="col-sm-4">
+  <div class="room-thumb"> 
+  	<%= image_tag room.image.url, class: 'img-responsive img-height' %>
+    <div class="mask">
+      <div class="main">
+        <h5><%= room.category %> Bedroom</h5>
+        <div class="price">&euro; <%= room.price %><span>a night</span></div>
+      </div>
+      <div class="content">
+        <p><span>A modern hotel room in Star Hotel</span> <%= truncate(room.description, length: 130) %> </p>
+        <div class="row">
+          <div class="col-xs-6">
+            <ul class="list-unstyled">
+              <br> <li><i class="fa fa-check-circle"></i> <%= room.beds %> Beds </li> <br>
+            </ul>
+          </div>
+          <div class="col-xs-6">
+            <ul class="list-unstyled">
+              <br> <li><i class="fa fa-check-circle"></i> <%= room.capacity %> People Capacity </li> <br>
+            </ul>
+          </div>
+        </div>
+        <a href="<%= room_path(room) %>" class="btn btn-primary btn-block btn-color-black">Details</a> </div>
+    </div>
+  </div>
+</div>

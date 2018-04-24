@@ -10,6 +10,17 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
 
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_host_name: 's3-us-west-2.amazonaws.com',
+    s3_credentials: {
+      bucket: 'mybucket12344321',
+      access_key_id: 'AKIAIIO7X64YYI64PMKQ',
+      secret_access_key: '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',
+      s3_region: 'us-west-2'
+    }
+  }
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
