@@ -29,7 +29,8 @@ gem 'active_admin_theme'
 gem 'activeadmin_addons'
 gem 'simple_form'
 gem "paperclip"
-gem 'aws-sdk', '~>2'
+gem 'aws-sdk', '~>3'
+gem 'date_validator'
 
 gem 'rails_12factor', group: :production
 gem 'pg', '~> 0.21.0', group: :production
