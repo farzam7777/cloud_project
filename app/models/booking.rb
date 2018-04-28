@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
 	belongs_to :room
 
 	validates :check_in, presence: true
-	# validates :check_out, presence: true, date: { after_or_equal_to:  :check_in}
+	validates :check_out, presence: true, date: { after_or_equal_to:  :check_in}
 	validates :guests, presence: true
 
 	def guests_limit(capacity, guests)
