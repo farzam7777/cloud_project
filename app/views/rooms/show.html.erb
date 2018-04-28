@@ -37,29 +37,30 @@
     </section>
     
     <!-- Reservation form -->
-    <section id="reservation-form" class="mt50 clearfix">
+    <section id="reservation-form" class="clearfix">
       <div class="col-sm-12 col-md-4">
-        <% if user_signed_in? %>
-          <h2 class="lined-heading"><span>Add Rating</span></h2>
-          <div class="star-rating">
-            
-          </div>
-        <% else %>
-          <div class="panel panel-info">
-            <div class="panel-heading">Rate Room</div>
-            <div class="panel-body">
-              <div class="alert alert-info">
-                <strong>Info!</strong> You must Sign in to Add Rating.
-              </div>
-            </div>
-          </div>
-        <% end %>
+        <h2 class="lined-heading mb0"><span>Add Rating</span></h2>
+        <div class="star-rating mb0" align="center">
+          <% 
+            @count = 5 - @avg_rating 
+            @temp = 1
+          %>
+          <% @avg_rating.times do %>
+            <%= link_to '', rating_room_path(@room, star: @temp), class: 'fa fa-star ' %>
+            <% @temp = @temp + 1 %>
+          <% end %>
+          
+          <% @count.times do %>
+            <%= link_to '', rating_room_path(@room, star: @temp), class: 'fa fa-star-o' %>
+            <% @temp = @temp + 1 %>
+          <% end %>
+        </div>
       </div>
 
       <div class="col-sm-12 col-md-4">
+        <h2 class="lined-heading"><span>Reservation</span></h2>
         <% if user_signed_in? %>
           <%= simple_form_for :booking, url: book_room_room_path(@room), method: :post, class: 'reservation-vertical clearfix' do |f| %>
-            <h2 class="lined-heading"><span>Reservation</span></h2>
             <div class="price">
               <h4><%= @room.category %> Room</h4>
               &euro; <%= @room.price %>,-<span> a night</span></div>

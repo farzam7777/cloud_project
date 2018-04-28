@@ -84,3 +84,7 @@
 .rel {
     position: relative;
 }
+
+.mb0{
+    margin-bottom: 20px !important;
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180428135544) do
+ActiveRecord::Schema.define(version: 20180428154931) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -74,6 +74,14 @@ ActiveRecord::Schema.define(version: 20180428135544) do
     t.index ["room_id"], name: "index_room_images_on_room_id"
   end
 
+  create_table "room_ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "rating"
+    t.bigint "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_room_ratings_on_room_id"
+  end
+
   create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "beds"
     t.integer "capacity"
@@ -123,5 +131,6 @@ ActiveRecord::Schema.define(version: 20180428135544) do
   add_foreign_key "reviews", "rooms"
   add_foreign_key "reviews", "users"
   add_foreign_key "room_images", "rooms"
+  add_foreign_key "room_ratings", "rooms"
   add_foreign_key "user_providers", "users"
 end
