@@ -1,0 +1,8 @@
+<div class="item <%= "active" if review == Review.first %>" align="center">
+  <div class="col-md-12 col-sm-12">
+    <div class="block-text rel zmin">
+      <a title="" href="#"><%= review.user.username.capitalize %></a>                            
+      <p style="margin-top: 4%;"><%= review.content %></p>
+    </div>
+  </div>
+</div>

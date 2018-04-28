@@ -18,6 +18,7 @@ class UserProvider < ApplicationRecord
               registered_user
           else
           user = User.create!(
+                            username: auth.info.name,
                             email: auth.info.email,
                             password: Devise.friendly_token[0,20],
                             confirmed_at: DateTime.now,
@@ -49,6 +50,7 @@ class UserProvider < ApplicationRecord
               registered_user
           else
               user = User.create!(
+                          username: auth.info.name,
                           email: auth.info.email,
                           password: Devise.friendly_token[0,20],
                           confirmed_at: DateTime.now,

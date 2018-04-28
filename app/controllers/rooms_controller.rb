@@ -7,6 +7,8 @@ class RoomsController < ApplicationController
 
   def show
   	@room = Room.find(params[:id])
+  	@reviews = @room.reviews
+    @images = @room.room_images
   end
 
   def book_room

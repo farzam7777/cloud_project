@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   	member do
   		post 'book_room'
   	end
+  	resources :reviews
   end
 end

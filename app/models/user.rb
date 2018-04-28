@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :user_provider, :dependent => :destroy
   has_many :bookings, dependent: :destroy
   has_many :rooms, through: :bookings
+  has_many :reviews, dependent: :destroy
+  has_many :rooms, through: :reviews
 
   scope :google_users, ->  { joins(:user_provider).where('user_providers.provider = ?', 'google_oauth2') }
   scope :facebook_users, ->  { joins(:user_provider).where('user_providers.provider = ?', 'facebook') }

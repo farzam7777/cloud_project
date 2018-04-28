@@ -1,5 +1,6 @@
 ActiveAdmin.register Room do
-	permit_params :beds, :capacity, :description, :image, :price, :category
+	permit_params :beds, :capacity, :description, :image, :price, :category,
+	 room_images_attributes: [:id, :room_id, :image, :_destroy]
 
 	form multipart: true do |f|
 	  f.inputs "Room Details" do
@@ -11,6 +12,13 @@ ActiveAdmin.register Room do
       ? image_tag(f.object.image.url(:thumb))
       : content_tag(:span, "no image yet")
       f.input :description
+      f.inputs "Room Images" do
+        f.has_many :room_images, allow_destroy: true do |p|
+          p.input :image, :hint => p.object.image.present? \
+      ? image_tag(p.object.image.url(:medium))
+      : content_tag(:span, "no image yet")
+        end
+      end
 	  end
 	  f.button :Submit
 	end
@@ -31,6 +39,15 @@ ActiveAdmin.register Room do
       end
       row :image do
         image_tag room.image.url(:medium)
+      end
+      row "Room Images" do
+        ul do
+          room.room_images.each do |img|
+            li do 
+              image_tag(img.image.url(:medium))
+            end
+          end
+        end
       end
     end
     

@@ -31,11 +31,7 @@
           		<%= image_tag @room.image.url, class: 'img-responsive' %>
           	</a> 
           </div>
-          <div class="item"> 
-          	<a href="images/rooms/slider/room-slider-03.jpg" data-rel="prettyPhoto[gallery1]">
-          		<%= image_tag 'img/rooms/slider/room-slider-03.jpg', class: 'img-responsive' %>
-          	</a> 
-          </div>
+          <%= render @images %>
         </div>
       </div>
     </section>
@@ -141,7 +137,7 @@
     </section>
 
     <!-- Room Content -->
-    <section>
+    <section id="reviews">
       <div class="container">
         <div class="row">
           <div class="col-sm-7 mt50">
@@ -150,33 +146,13 @@
               <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
                   
                 <div class="carousel-inner">
-                  <div class="item active">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="block-text rel zmin">
-                        <a title="" href="#">Hercules</a>                            
-                        <p style="margin-top: 4%;">Never before has there been a good film portrayal of ancient Greece's favourite myth. So why would Hollywood start now? This latest attempt at bringing the son of Zeus to the big screen is brought to us by X-Men: The last Stand director Brett Ratner. If the name of the director wasn't enough to dissuade ...</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="block-text rel zmin">
-                        <a title="" href="#">Hercules</a>                            
-                        <p style="margin-top: 4%;">Never before has there been a good film portrayal of ancient Greece's favourite myth. So why would Hollywood start now? This latest attempt at bringing the son of Zeus to the big screen is brought to us by X-Men: The last Stand director Brett Ratner. If the name of the director wasn't enough to dissuade ...</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="item">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="block-text rel zmin">
-                        <a title="" href="#">Hercules</a>                            
-                        <p style="margin-top: 4%;">Never before has there been a good film portrayal of ancient Greece's favourite myth. So why would Hollywood start now? This latest attempt at bringing the son of Zeus to the big screen is brought to us by X-Men: The last Stand director Brett Ratner. If the name of the director wasn't enough to dissuade ...</p>
-                      </div>
-                    </div>
-                  </div>                            
+                  <% if @reviews.count > 0 %>
+                    <%= render @reviews %>
+                  <% else %>
+                    <strong> <p align="center">No Reviews Yet</p> </strong>
+                  <% end %>                            
                 </div>
+                
                 <a class="left carousel-control" href="#carousel-reviews" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left icon-color"></span>
                 </a>
@@ -185,6 +161,27 @@
                 </a>
               </div>
             </div>
+
+            <h2 class="lined-heading"><span>Leave a Review</span></h2>
+            <% if user_signed_in? %>
+              <%= simple_form_for [@room, Review.new] do |f| %>
+                <div class="form-group">
+                  <%= f.input :content, as: :text, input_html: { class: 'form-control btn-color-black', rows: 5 }, label: 'Review' %>
+                </div>
+                <div class="form-group">
+                  <%= f.submit 'Submit Your Review', class: 'btn btn-primary btn-block btn-color-black' %>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="panel panel-info">
+                <div class="panel-heading">Leave a Review</div>
+                <div class="panel-body">
+                  <div class="alert alert-info">
+                    <strong>Info!</strong> You must Sign in to Add Reviews.
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
