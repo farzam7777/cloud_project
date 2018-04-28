@@ -40,6 +40,24 @@
     <section id="reservation-form" class="mt50 clearfix">
       <div class="col-sm-12 col-md-4">
         <% if user_signed_in? %>
+          <h2 class="lined-heading"><span>Add Rating</span></h2>
+          <div class="star-rating">
+            <%= rating_for @room, 'rate', star: 5 %>
+          </div>
+        <% else %>
+          <div class="panel panel-info">
+            <div class="panel-heading">Rate Room</div>
+            <div class="panel-body">
+              <div class="alert alert-info">
+                <strong>Info!</strong> You must Sign in to Add Rating.
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="col-sm-12 col-md-4">
+        <% if user_signed_in? %>
           <%= simple_form_for :booking, url: book_room_room_path(@room), method: :post, class: 'reservation-vertical clearfix' do |f| %>
             <h2 class="lined-heading"><span>Reservation</span></h2>
             <div class="price">

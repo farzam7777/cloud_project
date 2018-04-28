@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
          :omniauth_providers => [:facebook, :google_oauth2]
 
+  ratyrate_rater
+
   has_many :user_provider, :dependent => :destroy
   has_many :bookings, dependent: :destroy
   has_many :rooms, through: :bookings
