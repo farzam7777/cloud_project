@@ -1,0 +1,2 @@
+$('#rooms').html('<%= escape_javascript(render @rooms) %>')
+$("#paginator").html("<%= escape_javascript paginate @rooms, :theme => 'twitter-bootstrap-3', remote: true, window: 2, outer_window: 3 %>")

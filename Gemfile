@@ -31,6 +31,8 @@ gem 'simple_form'
 gem "paperclip"
 gem 'aws-sdk', '~>3'
 gem 'date_validator'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 gem 'rails_12factor', group: :production
 gem 'pg', '~> 0.21.0', group: :production

@@ -12,7 +12,7 @@
               <li><a href="<%= root_path %>">Home</a></li>
               <li class="active">Star Hotel Rooms</li>
             </ol>
-            <h1>Rooms list view</h1>
+            <h1>All Rooms</h1>
           </div>
         </div>
       </div>
@@ -25,10 +25,13 @@
   <div class="container">
     <div class="row room-list fadeIn appear"> 
       <!-- Rooms -->
-      <div class="rooms">
+      <div class="rooms" id="rooms">
       	<%= render @rooms %>
       </div>
       <!-- End Rooms -->
     </div>
+  </div>
+  <div id="paginator" align="center" class="mt20">
+    <%= paginate @rooms, :theme => 'twitter-bootstrap-3', remote: true, window: 2, outer_window: 3 %>
   </div>
 </section>

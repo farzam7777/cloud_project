@@ -116,23 +116,26 @@
               <tbody>
                 <tr>
                   <td><i class="fa fa-check-circle"></i> <%= @room.beds %> Beds</td>
-                  <td><i class="fa fa-check-circle"></i> Free Internet</td>
+                  <% if @room.internet? %>
+                    <td><i class="fa fa-check-circle"></i> Free Internet</td>
+                  <% end %>
                   <td><i class="fa fa-check-circle"></i> <%= @room.capacity %> People Capacity </td>
                 </tr>
                 <tr>
-                  <td><i class="fa fa-check-circle"></i> 60 square meter</td>
-                  <td><i class="fa fa-check-circle"></i> Beach view</td>
-                  <td><i class="fa fa-check-circle"></i> 2 persons</td>
+                  <% if @room.beach_view? %>
+                    <td><i class="fa fa-check-circle"></i> Beach view</td>
+                  <% end %>
+                  <% if @room.breakfast? %>
+                    <td><i class="fa fa-check-circle"></i> Breakfast included</td>
+                  <% end %>
+                  <% if @room.balcony? %>
+                    <td><i class="fa fa-check-circle"></i> Private Balcony</td>
+                  <% end %>
                 </tr>
                 <tr>
-                  <td><i class="fa fa-check-circle"></i> Double Bed</td>
-                  <td><i class="fa fa-check-circle"></i> Free Internet</td>
-                  <td><i class="fa fa-check-circle"></i> Breakfast included</td>
-                </tr>
-                <tr>
-                  <td><i class="fa fa-check-circle"></i> Private Balcony</td>
-                  <td><i class="fa fa-check-circle"></i> Flat Screen TV</td>
-                  <td><i class="fa fa-check-circle"></i> Jacuzzi</td>
+                  <% if @room.tv? %>
+                    <td><i class="fa fa-check-circle"></i> Flat Screen TV</td>
+                  <% end %>
                 </tr>
               </tbody>
             </table>
