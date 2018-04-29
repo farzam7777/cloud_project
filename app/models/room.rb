@@ -40,4 +40,8 @@ class Room < ApplicationRecord
   	s_relation
   end
 
+  def to_s
+    'Room# ' + id.to_s + ' - ' + category
+  end
+
 end

@@ -19,4 +19,8 @@ class Booking < ApplicationRecord
 		booking = Booking.arel_table
   	where(booking[:check_in].lteq(given_check_out).and(booking[:check_out].gteq(given_check_in))).count > 0 ? false : true
   end
+
+  def to_s
+  	'Room# ' + room.id.to_s + ' - ' + room.category + ' - ' + user.username
+  end
 end

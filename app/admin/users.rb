@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-permit_params :email, :password, :password_confirmation
+permit_params :email, :password, :password_confirmation, :username
 
 	scope :google_users
 	scope :facebook_users
@@ -16,6 +16,7 @@ permit_params :email, :password, :password_confirmation
 	form multipart: true do |f|
 	  f.inputs "User Details" do
 	  	f.input :email
+	  	f.input :username
 	  	if f.object.id.nil?
         f.inputs "Password" do
 	        f.input :password,              :label => "Password"																																																																																																																																																																																																																																																																																																												   
