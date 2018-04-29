@@ -75,19 +75,19 @@
               <label for="checkin">Check-in</label>
               <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Check-In is from 11:00"> <i class="fa fa-info-circle fa-lg"> </i> </div>
               <i class="fa fa-calendar infield"></i>
-              <%= f.input :check_in, input_html: { id: 'checkin', class: 'form-control', placeholder: 'Check-in' }, label: false %>
+              <%= f.input :check_in, input_html: { id: 'checkin', class: 'form-control btn-color-black', placeholder: 'Check-in' }, label: false %>
             </div>
             <div class="form-group">
               <label for="checkout">Check-out</label>
               <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Check-out is from 12:00"> <i class="fa fa-info-circle fa-lg"> </i> </div>
               <i class="fa fa-calendar infield"></i>
-              <%= f.input :check_out, input_html: { id: 'checkout', class: 'form-control', placeholder: 'Check-out' }, label: false %>
+              <%= f.input :check_out, input_html: { id: 'checkout', class: 'form-control btn-color-black', placeholder: 'Check-out' }, label: false %>
             </div>
             <div class="form-group">
               <div class="guests-select">
                 <label>Guests</label>
                 <i class="fa fa-user infield"></i>
-                <%= f.input :guests, input_html: { class: 'form-control' }, label: false %>
+                <%= f.input :guests, input_html: { class: 'form-control btn-color-black' }, label: false %>
               </div>
             </div>
             <%= f.submit 'Book Now', class: 'btn btn-primary btn-block btn-color-black' %>
