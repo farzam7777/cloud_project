@@ -20,6 +20,6 @@ production:
     api_secret: "2c140244eac02d6aff6315fd3147916c"
     redirect_uri: 'https://starhotel.herokuapp.com/users/auth/facebook/callback'
   google:
-    api_key: "300931973233-mttg01r2o0sjtaepgcdhlnve7k54mf35.apps.googleusercontent.com"
-    api_secret: "Ks7ppZs5IFmO51tMFFwEy5Om"
-    redirect_uri: 'https://starhotel.herokuapp.com/users/auth/google_oauth2/callback'
+    api_key: "300931973233-ec9ekvnngi7j6cc5gbk9rpbvnus1mtoe.apps.googleusercontent.com"
+    api_secret: "ac6M4VZA8_pRzZ_wnUMuvFb-"
+    redirect_uri: 'https://hms786.herokuapp.com/users/auth/google_oauth2/callback'
