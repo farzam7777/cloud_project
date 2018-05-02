@@ -14,9 +14,9 @@ Rails.application.configure do
     storage: :s3,
     s3_host_name: 's3-us-west-2.amazonaws.com',
     s3_credentials: {
-      bucket: 'mybucket12344321',
-      access_key_id: 'AKIAIIO7X64YYI64PMKQ',
-      secret_access_key: '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',
+      bucket: 'farzambucket',
+      access_key_id: 'AKIAJOP6G7APACLXGTUQ',
+      secret_access_key: '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',
       s3_region: 'us-west-2'
     }
   }
