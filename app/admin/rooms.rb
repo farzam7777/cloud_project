@@ -1,5 +1,5 @@
 ActiveAdmin.register Room do
-	permit_params :beds, :capacity, :description, :image, :price, :category, :internet, :balcony, :beach_view, 
+	permit_params :status, :beds, :capacity, :description, :image, :price, :category, :internet, :balcony, :beach_view, 
 	 :breakfast, :tv, room_images_attributes: [:id, :room_id, :image, :_destroy]
 
 	form multipart: true do |f|
@@ -7,6 +7,7 @@ ActiveAdmin.register Room do
 	  	f.input :beds, label: 'Number of Beds'
 	  	f.input :capacity, label: 'Total People Capacity'
 	  	f.input :price, label: 'Price per Night'
+      f.input :status, as: :select, collection: ['Yes', 'No'], label: 'Keep Room Available?'
 	  	f.input :category, as: :select, collection: ['Single', 'Double', 'Suite'], include_blank: false
       f.input :internet, as: :select, collection: [['Yes', 1], ['No', 0]], label: 'Free Internet'
       f.input :balcony, as: :select, collection: [['Yes', 1], ['No', 0]], label: 'Private Balcony'
@@ -38,6 +39,9 @@ ActiveAdmin.register Room do
       end
       row 'Price per Night' do
         room.price
+      end
+      row 'is Room Available?' do
+        room.status
       end
       row 'Room Category' do
         room.category
@@ -90,13 +94,17 @@ ActiveAdmin.register Room do
 	  end
 	  column 'Room Category' do |room|
 	  	room.category
-	  end																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			
+	  end
+    column 'Is Room Available?' do |room|
+      room.status
+    end																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	
 	  actions
 	end
 
 	filter :beds, label: 'Number of Beds'
   filter :capacity, label: 'Total People Capacity'
   filter :price, label: 'Price per Night'
+  filter :status, as: :select, collection: ['Yes', 'No'], label: 'Available Rooms'
   filter :category, as: :select, collection: ['Single', 'Double', 'Suite'], label: 'Room Category'
   filter :internet, as: :select, collection: [['Yes', 1], ['No', 0]], label: 'Free Internet'
   filter :balcony, as: :select, collection: [['Yes', 1], ['No', 0]], label: 'Private Balcony'

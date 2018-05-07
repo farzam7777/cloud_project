@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
 	include RoomsHelper
 	
   def index
-    @rooms = Kaminari.paginate_array(Room.all).page(params[:page]).per(3)
+    @rooms = Kaminari.paginate_array(Room.all.where(status: 'Yes')).page(params[:page]).per(3)
     respond_to do |format|
       format.html {  }
       format.js

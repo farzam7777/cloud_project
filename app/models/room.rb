@@ -32,7 +32,7 @@ class Room < ApplicationRecord
   end
 
   def self.top_rooms
-  	as_array = Room.find_by_sql "SELECT rooms.id, count(rooms.id) as bookings_count FROM rooms LEFT OUTER JOIN bookings on rooms.id = bookings.room_id 
+  	as_array = Room.find_by_sql "SELECT rooms.id, count(rooms.id) as bookings_count FROM rooms LEFT OUTER JOIN bookings on rooms.id = bookings.room_id where status = 'Yes'
   	GROUP by rooms.id ORDER by bookings_count desc LIMIT 3"
 
   	s_relation = Room.where(id: as_array.map(&:id))

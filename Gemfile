@@ -24,8 +24,6 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'thin'
 gem 'activeadmin'
-gem 'active_skin'
-gem 'active_admin_theme'
 gem 'activeadmin_addons'
 gem 'simple_form'
 gem "paperclip"
